@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Recordings - Mentor LMS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="recordings.css">
+</head>
+<body>
+
+    <!-- Top Navigation - Same as Home -->
+    <header class="topbar">
+
+        <div class="top-logo">
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Innomatics Logo">
+        </div>
+
+        <div class="top-search">
+            <span>⌕</span>
+            <input type="text" placeholder="Search">
+            <small>CTRL</small>
+            <small>K</small>
+        </div>
+
+        <div class="mentor-profile">
+
+            <span class="menu-icon">▤</span>
+
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Mentor Profile">
+
+            <div>
+                <strong>FSD Mentor</strong>
+                <small>TUTOR</small>
+            </div>
+
+            <span>⌄</span>
+
+        </div>
+
+    </header>
+
+    <!-- Sidebar - Same as Home -->
+    <aside class="sidebar">
+
+        <nav>
+
+            <a href="dashboard.html">
+                ⌂ <span>Home</span>
+            </a>
+
+            <a href="products.html">
+                ▦ <span>Products</span>
+            </a>
+
+            <div class="menu-group">
+
+                <a href="learning.html" class="active">
+                    ▣ <span>Learning</span>
+                </a>
+
+                <div class="submenu">
+                    <a href="learning.html">Batches</a>
+                    <a href="feedback.html">Feedback Forms</a>
+                    <a href="submissions.html">Submissions</a>
+                    <a href="recordings.html" class="selected">Session Recordings</a>
+                </div>
+
+            </div>
+
+            <div class="menu-group">
+
+                <a href="engage.html">
+                    ∞ <span>Engage</span>
+                </a>
+
+                <div class="submenu">
+                    <a href="engage.html">Community</a>
+                    <a href="discussions.html">Discussions</a>
+                </div>
+
+            </div>
+
+            <a href="settings.html">
+                ⚙ <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <h3>Session Recordings</h3>
+
+            <div class="storage">
+
+                <div class="storage-track">
+                    <div class="storage-fill"></div>
+                </div>
+
+                <small>238.75GB of 500GB consumed</small>
+
+            </div>
+
+        </div>
+
+        <!-- Filters -->
+        <section class="filter-bar">
+
+            <span>☰ Filters:</span>
+
+            <select id="dateFilter">
+                <option>Date Range</option>
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option>Last 3 months</option>
+                <option>All Time</option>
+            </select>
+
+            <select id="batchFilter">
+                <option value="">Select Batch</option>
+            </select>
+
+            <button class="apply-btn">Apply</button>
+
+        </section>
+
+        <!-- Recordings Container -->
+        <section class="recording-container">
+
+            <div class="recording-toolbar">
+
+                <div class="tabs">
+                    <button class="tab active">Active Batches</button>
+                    <button class="tab">Completed Batches</button>
+                    <button class="tab">Archived Batches</button>
+                </div>
+
+                <div class="recording-tools">
+
+                    <span>Total Count: 115</span>
+
+                    <input type="search"
+                           id="recordingSearch"
+                           placeholder="Search recordings by class...">
+
+                    <select id="actions">
+                        <option value="">Actions</option>
+                        <option>Publish Selected</option>
+                        <option>Archive Selected</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Recordings Table -->
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>Sr.</th>
+                            <th>Class Name</th>
+                            <th>Batches</th>
+                            <th>Instructor</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recordingTableBody">
+
+                        <tr>
+                            <td colspan="7" class="empty-data">
+                                No recordings available
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+
+                <span>1-10 of 115 items</span>
+
+                <button>‹</button>
+                <button class="current">1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>12</button>
+                <button>›</button>
+
+                <select>
+                    <option>10 / page</option>
+                    <option>20 / page</option>
+                    <option>50 / page</option>
+                </select>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="recordings.js"></script>
+
+</body>
+</html>

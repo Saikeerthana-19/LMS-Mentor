@@ -1,0 +1,595 @@
+
+/* ================= GENERAL RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    color: #202b3c;
+}
+
+/* ================= TOP NAVIGATION ================= */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 74px;
+    background: #142544;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 23px;
+    color: white;
+    z-index: 1000;
+}
+
+/* Main Logo */
+.top-logo {
+    width: 56px;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.top-logo img {
+    width: 48px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Search Bar */
+.top-search {
+    width: 475px;
+    height: 47px;
+    background: #293b59;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    color: #aebbd0;
+}
+
+.top-search span {
+    font-size: 17px;
+}
+
+.top-search input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+.top-search input::placeholder {
+    color: #aebbd0;
+}
+
+.top-search small {
+    border: 1px solid #8996aa;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Mentor Profile */
+.mentor-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.mentor-profile img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.mentor-profile strong {
+    display: block;
+    font-size: 14px;
+    color: white;
+}
+
+.mentor-profile small {
+    display: block;
+    color: #aebbd0;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.menu-icon {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 92px;
+    height: calc(100vh - 74px);
+    background: #142544;
+    z-index: 900;
+    overflow: visible;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    overflow: visible;
+}
+
+.sidebar nav > a,
+.sidebar .menu-group > a {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: #aebbd0;
+    font-size: 25px;
+    padding: 0;
+}
+
+.sidebar nav a span {
+    font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: white;
+    background: transparent;
+}
+
+/* Menu Group */
+.menu-group {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Floating Submenu */
+.menu-group .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 185px;
+    padding: 10px 0;
+    background: #1b2d49;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+}
+
+.menu-group:hover .submenu {
+    display: block;
+}
+
+.menu-group .submenu a {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: normal;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu-group .submenu a:hover,
+.menu-group .submenu a.selected {
+    background: #304563;
+    color: white;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+    margin-left: 92px;
+    padding-top: 74px;
+    min-height: 100vh;
+    background: #eef2f7;
+}
+
+/* Batches Heading */
+.main-content > h3 {
+    background: white;
+    padding: 17px;
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid #dce2eb;
+}
+
+/* ================= FILTERS ================= */
+
+.filters {
+    background: white;
+    padding: 10px 16px;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #dce2eb;
+}
+
+.filters span {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.filters select {
+    width: 190px;
+    padding: 10px;
+    border: 1px solid #d5dce6;
+    border-radius: 5px;
+    color: #777;
+    background: white;
+}
+
+.filters button {
+    margin-left: auto;
+    background: #1764f5;
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #1255d5;
+}
+
+/* ================= BATCH CONTAINER ================= */
+
+.batch-container {
+    margin: 20px;
+    padding: 14px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* Toolbar */
+.batch-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.tab {
+    border: none;
+    background: white;
+    padding: 9px 15px;
+    cursor: pointer;
+    color: #555;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background: #eaf1ff;
+    color: #172b4d;
+    font-weight: bold;
+}
+
+.batch-tools {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.batch-tools button {
+    border: none;
+    background: white;
+    cursor: pointer;
+    color: #33445e;
+}
+
+.batch-tools input {
+    padding: 9px;
+    border: 1px solid #d5dce6;
+    border-radius: 5px;
+    width: 240px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1050px;
+    font-size: 12px;
+}
+
+thead {
+    background: #edf1f5;
+}
+
+th {
+    padding: 14px 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #edf0f4;
+    line-height: 1.5;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+td:first-child {
+    color: #8093af;
+    text-align: center;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-track {
+    width: 110px;
+    height: 7px;
+    background: #e9e9e9;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.progress-fill {
+    height: 7px;
+    background: #1670ff;
+    border-radius: 10px;
+}
+
+/* Action Button */
+.action-btn {
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 5px;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+
+/* ================= COLUMNS MENU ================= */
+
+.columns-container {
+    position: relative;
+}
+
+.columns-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 210px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.columns-menu.show {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.columns-menu label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ================= COLUMN MANAGER MODAL ================= */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.55);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.columns-modal {
+    width: 650px;
+    min-height: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modal-header h3 {
+    margin: 0 0 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+.modal-header p {
+    font-size: 12px;
+    color: #555;
+}
+
+.modal-links {
+    display: flex;
+    gap: 15px;
+}
+
+.modal-links button {
+    background: none;
+    border: none;
+    color: #1769ff;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.columns-content {
+    display: grid;
+    grid-template-columns: 1fr 35px 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.columns-content h4 {
+    font-size: 11px;
+    color: #8191a8;
+    margin-bottom: 12px;
+}
+
+.column-arrow {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    color: #8191a8;
+}
+
+.column-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f5ff;
+    border: 1px solid #d7e3ff;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.column-option input {
+    accent-color: #1769ff;
+    width: 17px;
+    height: 17px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.modal-footer button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#discardColumns {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+#saveColumns {
+    background: #1769ff;
+    border: 1px solid #1769ff;
+    color: white;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media(max-width: 900px) {
+
+    .top-search {
+        width: 250px;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .filters select {
+        width: 45%;
+    }
+
+    .batch-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .batch-tools {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 700px) {
+
+    .columns-modal {
+        width: 92%;
+        padding: 15px;
+    }
+
+    .columns-content {
+        grid-template-columns: 1fr;
+    }
+
+    .column-arrow {
+        display: none;
+    }
+
+    .top-search {
+        width: 180px;
+    }
+}

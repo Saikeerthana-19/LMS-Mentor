@@ -1,0 +1,406 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3f9;
+}
+
+/* Main settings area */
+
+.settings-main {
+    margin-left: 86px;
+    padding-top: 70px;
+    min-height: calc(100vh - 70px);
+}
+
+/* Settings header */
+
+.settings-header {
+    height: 70px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px 0 22px;
+    border-bottom: 1px solid #e1e5ec;
+    box-sizing: border-box;
+    position: sticky;
+    top: 70px;
+    z-index: 50;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 18px;
+    color: #778397;
+}
+
+.breadcrumb strong {
+    color: #222;
+}
+
+.back-icon {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+
+.arrow {
+    font-size: 25px;
+    color: #8491a3;
+}
+
+/* Header buttons */
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.settings-actions button {
+    height: 43px;
+    padding: 0 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.password-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.edit-btn {
+    background: #1760f5;
+    border: 1px solid #1760f5;
+    color: white;
+}
+
+/* Settings layout */
+
+.settings-layout {
+    display: flex;
+    min-height: calc(100vh - 140px);
+}
+
+/* Left menu */
+
+.settings-menu {
+    width: 278px;
+    flex-shrink: 0;
+    background: white;
+    padding: 30px 28px;
+    box-sizing: border-box;
+}
+
+.settings-menu small {
+    display: block;
+    color: #71829d;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.settings-menu a {
+    display: block;
+    text-decoration: none;
+    color: #1760f5;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Right profile section */
+
+.profile-content {
+    flex: 1;
+    min-width: 0;
+    padding: 28px;
+    background: #eef3f9;
+}
+
+/* Profile card */
+
+.profile-card {
+    background: white;
+    min-height: 107px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    padding: 20px 26px;
+    box-sizing: border-box;
+    margin-bottom: 17px;
+    gap: 22px;
+}
+
+.profile-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.profile-card h3 {
+    margin: 0 0 7px;
+    font-size: 18px;
+    color: #252525;
+    font-weight: 500;
+}
+
+.profile-card p {
+    margin: 0;
+    color: #8193ac;
+    font-size: 15px;
+}
+
+/* Detail cards */
+
+.detail-card {
+    background: white;
+    border-radius: 13px;
+    padding: 22px 19px;
+    margin-bottom: 17px;
+    box-sizing: border-box;
+}
+
+.detail-card h3 {
+    margin: 0 0 35px;
+    font-size: 18px;
+    color: #303030;
+    font-weight: 500;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 18px;
+}
+
+.detail-item label {
+    display: block;
+    color: #8193ac;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.detail-item p {
+    margin: 0;
+    color: #444;
+    font-size: 14px;
+}
+
+/* Other section */
+
+.other-card h3 {
+    margin-bottom: 18px;
+}
+
+.other-details {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+@media(max-width: 900px) {
+
+    .settings-menu {
+        width: 200px;
+    }
+
+    .profile-content {
+        padding: 18px;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .settings-header {
+        padding: 0 10px;
+    }
+
+    .breadcrumb {
+        font-size: 14px;
+        gap: 7px;
+    }
+
+    .settings-actions button {
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    .settings-menu {
+        width: 125px;
+        padding: 20px 12px;
+    }
+
+    .profile-content {
+        padding: 12px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* SETTINGS PAGE HEADER FIX */
+
+.settings-main {
+    margin-left: 80px;
+    padding-top: 64px;
+    min-height: 100vh;
+    background: #eef3f9;
+}
+
+.settings-main .topbar {
+    height: 64px;
+}
+
+/* Logo */
+.top-logo img {
+    width: 48px;
+    height: 43px;
+    object-fit: contain;
+    background: white;
+}
+
+/* Search */
+.top-search {
+    width: 410px;
+    height: 40px;
+    background: #293a58;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+    gap: 9px;
+    position: absolute;
+    left: 30%;
+}
+
+.top-search input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+/* Mentor profile */
+.mentor-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+/* Sidebar */
+.sidebar nav a {
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #b6c2d5;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.sidebar nav a span {
+    font-size: 12px;
+}
+
+.sidebar nav a.active {
+    color: white;
+}
+
+/* Settings content */
+.settings-header {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #dce2ea;
+}
+
+.settings-layout {
+    display: flex;
+    min-height: calc(100vh - 134px);
+}
+
+.settings-menu {
+    width: 280px;
+    flex-shrink: 0;
+    background: white;
+    padding: 30px;
+}
+
+.profile-content {
+    flex: 1;
+    min-width: 0;
+    padding: 28px;
+    background: #eef3f9;
+}
+
+.profile-card,
+.detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.detail-item label {
+    color: #8293aa;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.detail-item p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+@media(max-width: 768px) {
+    .settings-menu {
+        width: 180px;
+        padding: 15px;
+    }
+
+    .profile-content {
+        padding: 15px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.profile-edit-input {
+    width: 90%;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.profile-edit-input:focus {
+    border-color: #2563eb;
+}

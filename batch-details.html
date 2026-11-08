@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Details - Mentor LMS</title>
+    <link rel="stylesheet" href="batch-details.css">
+</head>
+<body>
+
+<!-- Top Header -->
+<header class="topbar">
+    <div class="logo">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.-qDcdVUk-oZTi-bIvm4NwwAAAA?r=0&pid=Api&h=220&P=0"
+             alt="Logo">
+    </div>
+
+    <input type="search" placeholder="Search">
+
+    <div class="profile">FSD Mentor ▼</div>
+</header>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <a href="dashboard.html">⌂ <span>Home</span></a>
+    <a href="products.html">◇ <span>Products</span></a>
+
+    <div class="menu-group">
+        <a href="learning.html" class="active">▣ <span>Learning</span></a>
+        <div class="submenu">
+            <a href="learning.html">Batches</a>
+            <a href="feedback.html">Feedback Forms</a>
+            <a href="submissions.html">Submissions</a>
+            <a href="recordings.html">Session Recordings</a>
+        </div>
+    </div>
+
+    <a href="engage.html">∞ <span>Engage</span></a>
+    <a href="settings.html">⚙ <span>Settings</span></a>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+    <!-- Batch Header -->
+    <section class="batch-header">
+
+        <div class="batch-title">
+            <button class="back-btn" onclick="history.back()">←</button>
+
+            <h3 id="batchName">Full Stack Development - FSD Morning Batch</h3>
+
+            <span class="module-link">
+                <span id="moduleCount">0</span> Modules Linked
+            </span>
+
+            <a href="#learners">View List ›</a>
+        </div>
+
+        <div class="header-actions">
+            <button class="edit-btn">✎ Edit Batch</button>
+            <div class="action-dropdown">
+                <button id="batchActionsBtn">Batch Actions ▼</button>
+                <div class="action-menu" id="batchActionsMenu">
+                    <button>View Learners</button>
+                    <button>View Sessions</button>
+                    <button>Download Report</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+
+        <div class="summary-card">
+            <div class="summary-icon">♙</div>
+            <div>
+                <small>Learners</small>
+                <h3 id="learnerCount">0</h3>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">◴</div>
+            <div>
+                <small>Class Progress</small>
+                <h3>
+                    <span id="completedSessions">0</span> /
+                    <span id="totalSessions">0</span>
+                    <span id="classProgress">0%</span>
+                </h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Batch Navigation Tabs -->
+    <section class="details-container">
+
+        <div class="main-tabs">
+            <button class="main-tab active" data-tab="learners">Learners</button>
+            <button class="main-tab" data-tab="sessions">Sessions</button>
+            <button class="main-tab" data-tab="attendance">Attendance Report</button>
+            <button class="main-tab" data-tab="content">Content Progress</button>
+            <button class="main-tab" data-tab="assessment">Assessment Progress</button>
+        </div>
+
+        <!-- Learners Section -->
+        <div class="tab-content active" id="learners">
+
+            <div class="sub-toolbar">
+
+                <div class="learner-tabs">
+                    <button class="learner-tab active">All</button>
+                    <button class="learner-tab">Enrolled</button>
+                    <button class="learner-tab">Leave</button>
+                    <button class="learner-tab">Completed</button>
+                    <button class="learner-tab">Free Enrolled</button>
+                    <button class="learner-tab">Archived</button>
+                </div>
+
+                <div class="learner-tools">
+                    <span>Total Count: <b id="learnerTotal">0</b></span>
+
+                    <input type="search"
+                           id="learnerSearch"
+                           placeholder="Search by Name, Email, Mobile...">
+                </div>
+
+            </div>
+
+            <div class="table-wrapper" id="learnersTableWrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Learner Name</th>
+                            <th>Enrolled On</th>
+                            <th>Attendance</th>
+                            <th>Progress</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="learnerTableBody">
+                        <tr>
+                            <td colspan="5">Learner details will appear here.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        
+<div class="tab-content" id="sessions">
+
+    <h3>Sessions</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>Session Name</th>
+                    <th>Topic</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Attendance</th>
+                    <th>Status</th>
+                    <th>Meeting Type</th>
+                </tr>
+            </thead>
+
+            <tbody id="sessionDetailsBody">
+                <tr>
+                    <td colspan="8">Loading sessions...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+        <!-- Attendance Section -->
+        <div class="tab-content" id="attendance">
+            <h3>Attendance Report</h3>
+            <p>Attendance report will appear here.</p>
+        </div>
+
+        <!-- Content Progress Section -->
+        <div class="tab-content" id="content">
+            <h3>Content Progress</h3>
+            <p>Content progress will appear here.</p>
+        </div>
+
+        <!-- Assessment Progress Section -->
+        <div class="tab-content" id="assessment">
+            <h3>Assessment Progress</h3>
+            <p>Assessment progress will appear here.</p>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="batch-details.js"></script>
+</body>
+</html>

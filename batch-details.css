@@ -1,0 +1,414 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    color: #27364b;
+}
+
+/* Header */
+.topbar {
+    height: 64px;
+    background: #142544;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+.topbar input {
+    width: 390px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    background: #30415e;
+    color: white;
+}
+
+.profile {
+    color: white;
+    font-size: 14px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 64px;
+    height: calc(100vh - 64px);
+    background: #142544;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+}
+
+.sidebar > a,
+.menu-group > a {
+    min-height: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #b9c5d7;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar a span {
+    font-size: 11px;
+}
+
+.sidebar a.active {
+    background: #293f62;
+    color: white;
+}
+
+.menu-group {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 64px;
+    top: 0;
+    width: 190px;
+    background: #142544;
+    box-shadow: 3px 3px 10px #0003;
+}
+
+.menu-group:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.submenu a:hover {
+    background: #293f62;
+}
+
+/* Main */
+.main-content {
+    margin-left: 64px;
+    padding-top: 64px;
+}
+
+/* Batch Header */
+.batch-header {
+    min-height: 53px;
+    background: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dce3eb;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.batch-title,
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.batch-title h3 {
+    font-size: 15px;
+}
+
+.back-btn {
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.module-link {
+    color: #8192a9;
+    font-size: 12px;
+}
+
+.batch-title a {
+    color: #1769ff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.edit-btn,
+.action-dropdown > button {
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #777;
+}
+
+.action-dropdown {
+    position: relative;
+}
+
+.action-dropdown > button {
+    background: #1769ff;
+    border: none;
+    color: white;
+}
+
+.action-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    width: 175px;
+    box-shadow: 0 3px 12px #0002;
+    border-radius: 6px;
+    z-index: 20;
+}
+
+.action-menu.show {
+    display: block;
+}
+
+.action-menu button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.action-menu button:hover {
+    background: #edf3ff;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: flex;
+    gap: 14px;
+    padding: 20px;
+}
+
+.summary-card {
+    width: 200px;
+    min-height: 64px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px;
+}
+
+.summary-icon {
+    width: 36px;
+    height: 36px;
+    background: #edf1f5;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.summary-card small {
+    color: #8192a9;
+    font-size: 11px;
+}
+
+.summary-card h3 {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+#classProgress {
+    color: #17ad75;
+    font-size: 12px;
+}
+
+/* Main Tabs */
+.details-container {
+    background: white;
+    margin: 0 20px 25px;
+    border-radius: 9px;
+    padding: 20px;
+}
+
+.main-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+}
+
+.main-tab,
+.learner-tab {
+    border: none;
+    background: transparent;
+    padding: 9px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #555;
+    font-size: 12px;
+}
+
+.main-tab.active,
+.learner-tab.active {
+    background: #eaf1ff;
+    color: #1769ff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding-top: 15px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Learner Toolbar */
+.sub-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.learner-tabs,
+.learner-tools {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.learner-tools {
+    font-size: 11px;
+}
+
+.learner-tools input {
+    width: 205px;
+    padding: 9px;
+    border: 1px solid #dce2ea;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+thead {
+    background: #edf1f5;
+}
+
+th {
+    text-align: left;
+    padding: 14px;
+    font-size: 12px;
+}
+
+td {
+    padding: 15px 14px;
+    border-bottom: 1px solid #edf0f3;
+    font-size: 12px;
+    color: #555;
+}
+
+tbody tr:hover {
+    background: #fafcff;
+}
+
+@media(max-width: 768px) {
+    .topbar input {
+        width: 40%;
+    }
+
+    .details-container {
+        margin: 0 10px;
+        padding: 12px;
+    }
+
+    .summary-cards {
+        flex-wrap: wrap;
+    }
+}
+.progress-track {
+    display: inline-block;
+    width: 100px;
+    height: 7px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #1677ff;
+    border-radius: 10px;
+}
+
+.attendance-value {
+    background: #fff3df;
+    color: #e69b22;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.action-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#learnerTableBody small {
+    color: #8493a8;
+    font-size: 12px;
+}

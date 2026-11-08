@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning - Mentor LMS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="learning.css">
+</head>
+<body>
+
+    <!-- Top Navigation - Same as Home -->
+    <header class="topbar">
+
+        <div class="top-logo">
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Innomatics Logo">
+        </div>
+
+        <div class="top-search">
+            <span>⌕</span>
+            <input type="text" placeholder="Search">
+            <small>CTRL</small>
+            <small>K</small>
+        </div>
+
+        <div class="mentor-profile">
+
+            <span class="menu-icon">▤</span>
+
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Mentor Profile">
+
+            <div>
+                <strong>FSD Mentor</strong>
+                <small>TUTOR</small>
+            </div>
+
+            <span>⌄</span>
+
+        </div>
+
+    </header>
+
+    <!-- Sidebar - Same as Home -->
+    <aside class="sidebar">
+
+        <nav>
+
+            <a href="dashboard.html">
+                ⌂ <span>Home</span>
+            </a>
+
+            <a href="products.html">
+                ▦ <span>Products</span>
+            </a>
+
+            <div class="menu-group">
+
+                <a href="learning.html" class="active">
+                    ▣ <span>Learning</span>
+                </a>
+
+                <div class="submenu">
+                    <a href="learning.html" class="selected">Batches</a>
+                    <a href="feedback.html">Feedback Forms</a>
+                    <a href="submissions.html">Submissions</a>
+                    <a href="recordings.html">Session Recordings</a>
+                </div>
+
+            </div>
+
+            <div class="menu-group">
+
+                <a href="engage.html">
+                    ∞ <span>Engage</span>
+                </a>
+
+                <div class="submenu">
+                    <a href="engage.html">Community</a>
+                    <a href="discussions.html">Discussions</a>
+                </div>
+
+            </div>
+
+            <a href="settings.html">
+                ⚙ <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <h3>Batches</h3>
+
+        <!-- Filters -->
+        <section class="filters">
+
+            <span>☰ Filters:</span>
+
+            <select id="batchStatus">
+                <option value="">Select Batch Status</option>
+                <option>Upcoming</option>
+                <option>Ongoing</option>
+                <option>Completed</option>
+                <option>Archived</option>
+            </select>
+
+            <select id="courseFilter">
+                <option value="">Select Course</option>
+            </select>
+
+            <select id="moduleFilter">
+                <option value="">Select Module</option>
+            </select>
+
+            <select id="instructorFilter">
+                <option value="">Select Instructor</option>
+            </select>
+
+            <button id="applyFilters">Apply</button>
+
+        </section>
+
+        <!-- Batch Container -->
+        <section class="batch-container">
+
+            <div class="batch-toolbar">
+
+                <div class="tabs">
+                    <button class="tab active" data-status="Active">Active</button>
+                    <button class="tab" data-status="Completed">Completed</button>
+                    <button class="tab" data-status="Archived">Archived</button>
+                    <button class="tab" data-status="All">All</button>
+                </div>
+
+                <div class="batch-tools">
+
+                    <span>
+                        Total Count: <b id="totalCount">0</b>
+                    </span>
+
+                    <button id="columnsBtn">☷ Columns</button>
+
+                    <!-- Manage Columns Modal -->
+                    <div class="modal-overlay" id="columnsModal">
+
+                        <div class="columns-modal">
+
+                            <div class="modal-header">
+
+                                <div>
+                                    <h3>Manage Columns</h3>
+                                    <p id="visibleCount">8 of 8 columns visible</p>
+                                </div>
+
+                                <div class="modal-links">
+                                    <button id="showAllColumns">Show All</button>
+                                    <button id="resetColumns">Reset to default</button>
+                                </div>
+
+                            </div>
+
+                            <div class="columns-content">
+
+                                <div class="available-columns">
+                                    <h4>AVAILABLE COLUMNS</h4>
+                                    <div id="availableColumnList"></div>
+                                </div>
+
+                                <div class="column-arrow">➜</div>
+
+                                <div class="selected-columns">
+                                    <h4>SELECTED COLUMNS</h4>
+                                    <div id="selectedColumnList"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button id="discardColumns">Discard Changes</button>
+                                <button id="saveColumns">Save Changes</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <input type="search"
+                           id="batchSearch"
+                           placeholder="Search by batch name...">
+
+                </div>
+
+            </div>
+
+            <!-- Batch Table -->
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Batch Name</th>
+                            <th>Course</th>
+                            <th>Duration</th>
+                            <th>Module & Instructor</th>
+                            <th>Batch Manager</th>
+                            <th>Batch Progress</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="batchTableBody">
+                        <tr>
+                            <td colspan="8">No batches available</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="learning.js"></script>
+
+</body>
+</html>

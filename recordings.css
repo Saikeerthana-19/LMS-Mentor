@@ -1,0 +1,487 @@
+
+/* ================= GENERAL RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    color: #252525;
+}
+
+/* ================= TOP NAVIGATION ================= */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 74px;
+    background: #142544;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 23px;
+    z-index: 1000;
+    color: white;
+}
+
+/* Logo */
+.top-logo {
+    width: 56px;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.top-logo img {
+    width: 48px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Search */
+.top-search {
+    width: 475px;
+    height: 47px;
+    background: #293b59;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    color: #aebbd0;
+}
+
+.top-search span {
+    font-size: 17px;
+}
+
+.top-search input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+.top-search input::placeholder {
+    color: #aebbd0;
+}
+
+.top-search small {
+    border: 1px solid #8996aa;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Mentor Profile */
+.mentor-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.mentor-profile img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.mentor-profile strong {
+    display: block;
+    font-size: 14px;
+    color: white;
+}
+
+.mentor-profile small {
+    display: block;
+    color: #aebbd0;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.menu-icon {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 92px;
+    height: calc(100vh - 74px);
+    background: #142544;
+    z-index: 900;
+    overflow: visible;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    overflow: visible;
+}
+
+.sidebar nav > a,
+.sidebar .menu-group > a {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: #aebbd0;
+    font-size: 25px;
+    padding: 0;
+}
+
+.sidebar nav a span {
+    font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: white;
+    background: transparent;
+}
+
+/* Menu Group */
+.menu-group {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Submenu */
+.menu-group .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 185px;
+    background: #1b2d49;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    z-index: 2000;
+}
+
+.menu-group:hover .submenu,
+.menu-group.open .submenu {
+    display: block;
+}
+
+.menu-group .submenu a {
+    display: block;
+    padding: 13px 18px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.menu-group .submenu a:hover,
+.menu-group .submenu a.selected {
+    background: #304563;
+    color: white;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+    margin-left: 92px;
+    padding-top: 74px;
+    min-height: 100vh;
+    background: #eef2f7;
+}
+
+/* Page Header */
+.page-header {
+    min-height: 65px;
+    background: white;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e9ef;
+}
+
+.page-header h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Storage Usage */
+.storage {
+    width: 190px;
+    text-align: right;
+}
+
+.storage-track {
+    height: 6px;
+    background: #e4e9f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.storage-fill {
+    width: 47.75%;
+    height: 100%;
+    background: #548cf5;
+}
+
+.storage small {
+    font-size: 11px;
+    color: #777;
+}
+
+/* ================= FILTERS ================= */
+
+.filter-bar {
+    min-height: 55px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e3e8ef;
+}
+
+.filter-bar span {
+    font-size: 13px;
+}
+
+.filter-bar select {
+    height: 34px;
+    min-width: 150px;
+    padding: 0 9px;
+    border: 1px solid #d5d9df;
+    border-radius: 5px;
+    background: white;
+    font-size: 12px;
+}
+
+.apply-btn {
+    margin-left: auto;
+    background: #1764f5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-btn:hover {
+    background: #1255d5;
+}
+
+/* ================= RECORDINGS CONTAINER ================= */
+
+.recording-container {
+    margin: 20px;
+    padding: 14px;
+    background: white;
+    border-radius: 9px;
+}
+
+/* Toolbar */
+.recording-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.tab {
+    border: none;
+    background: white;
+    padding: 9px 13px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background: #edf3ff;
+    color: #142442;
+    font-weight: bold;
+}
+
+.recording-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.recording-tools input,
+.recording-tools select {
+    height: 34px;
+    padding: 0 9px;
+    border: 1px solid #d5d9df;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #edf1f6;
+}
+
+th {
+    padding: 13px 10px;
+    text-align: left;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #edf0f3;
+    font-size: 12px;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+.empty-data {
+    text-align: center;
+    color: #999;
+    padding: 50px;
+}
+
+/* Video display */
+table video {
+    max-width: 100%;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #1764f5;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    padding: 15px 5px 3px;
+    font-size: 12px;
+}
+
+.pagination button {
+    border: none;
+    background: white;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background: #edf3ff;
+}
+
+.pagination .current {
+    border: 1px solid #1764f5;
+    color: #1764f5;
+    border-radius: 4px;
+}
+
+.pagination select {
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    .top-search {
+        width: 250px;
+    }
+
+    .recording-container {
+        margin: 15px 12px;
+        overflow: hidden;
+    }
+
+    .recording-toolbar {
+        align-items: flex-start;
+    }
+
+    .recording-tools {
+        flex-wrap: wrap;
+    }
+
+    .filter-bar {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .page-header {
+        padding: 10px;
+    }
+
+    .page-header h3 {
+        font-size: 15px;
+    }
+
+    .storage {
+        width: 145px;
+    }
+
+    .top-search {
+        width: 170px;
+    }
+}

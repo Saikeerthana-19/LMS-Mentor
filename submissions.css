@@ -1,0 +1,409 @@
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f3f8;
+    color: #252525;
+}
+
+/* COMMON TOP HEADER */
+.topbar {
+    height: 74px;
+    background: #142442;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px 0 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* LOGO */
+.top-logo {
+    width: 56px;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.top-logo img {
+    width: 48px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* SEARCH */
+.top-search {
+    width: 475px;
+    height: 47px;
+    background: #2b3b59;
+    border: 1px solid #465675;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 10px;
+}
+
+.top-search span {
+    font-size: 21px;
+    color: #cbd5e1;
+}
+
+.top-search input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+}
+
+.top-search input::placeholder {
+    color: #cbd5e1;
+}
+
+.top-search small {
+    color: #cbd5e1;
+    border: 1px solid #64748b;
+    border-radius: 3px;
+    padding: 3px 5px;
+    font-size: 10px;
+}
+
+/* MENTOR PROFILE */
+.mentor-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 13px;
+}
+
+.mentor-profile img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+}
+
+.mentor-profile div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mentor-profile strong {
+    font-size: 13px;
+}
+
+.mentor-profile small {
+    font-size: 10px;
+    color: #b9c5d9;
+}
+
+.mentor-profile > span {
+    font-size: 16px;
+}
+
+/* COMMON SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 92px;
+    height: calc(100vh - 74px);
+    background: #142442;
+    z-index: 50;
+    padding-top: 15px;
+    overflow-y: auto;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav > a,
+.menu-group > a {
+    color: #b9c5d9;
+    text-decoration: none;
+    min-height: 65px;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.nav-icon {
+    font-size: 21px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    color: white;
+    background: #263956;
+}
+
+.menu-group {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 92px;
+    top: 0;
+    width: 190px;
+    background: #1b2d49;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px #0003;
+    z-index: 100;
+}
+
+.menu-group:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 13px 15px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.submenu a:hover,
+.submenu .selected {
+    background: #304563;
+    color: white;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 92px;
+    padding-top: 74px;
+    min-height: 100vh;
+}
+
+.page-title {
+    height: 43px;
+    background: white;
+    padding: 13px 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* FILTERS */
+.filter-bar {
+    min-height: 48px;
+    background: white;
+    border-top: 1px solid #e5e9ef;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    flex-wrap: wrap;
+}
+
+.filter-bar span {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.filter-bar select,
+.filter-bar button {
+    height: 30px;
+    padding: 0 9px;
+    border: 1px solid #d5d9df;
+    border-radius: 5px;
+    background: white;
+    font-size: 11px;
+    color: #444;
+}
+
+.filter-bar select {
+    min-width: 125px;
+}
+
+.filter-bar button {
+    cursor: pointer;
+}
+
+.filter-bar .clear-btn {
+    color: red;
+    border-color: #ff7777;
+}
+
+.filter-bar .apply-btn {
+    margin-left: auto;
+    background: #1764f5;
+    color: white;
+    border-color: #1764f5;
+    padding: 0 18px;
+}
+
+/* TABLE CONTAINER */
+.submission-container {
+    margin: 15px 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.submission-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.tab {
+    border: none;
+    background: white;
+    padding: 9px 12px;
+    font-size: 11px;
+    color: #555;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #edf3ff;
+    color: #142442;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.table-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.table-tools input {
+    padding: 7px 10px;
+    width: 220px;
+    border: 1px solid #d8dce2;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* SUBMISSION TABLE */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #edf1f6;
+}
+
+th {
+    text-align: left;
+    padding: 12px 10px;
+    font-size: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #edf0f3;
+    font-size: 10px;
+    line-height: 1.5;
+    max-width: 150px;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+.empty-data {
+    text-align: center;
+    color: #999;
+    padding: 50px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 800px) {
+    .top-search {
+        width: 40%;
+    }
+
+    .filter-bar {
+        align-items: flex-start;
+    }
+
+    .table-tools input {
+        width: 150px;
+    }
+
+    .submission-container {
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 500px) {
+    .topbar {
+        padding: 0 10px;
+    }
+
+    .top-search {
+        width: 35%;
+    }
+
+    .mentor-profile {
+        gap: 5px;
+    }
+
+    .mentor-profile img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .sidebar {
+        width: 65px;
+    }
+
+    .submenu {
+        left: 65px;
+    }
+
+    .main-content {
+        margin-left: 65px;
+    }
+}

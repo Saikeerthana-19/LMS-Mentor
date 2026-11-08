@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissions - Mentor LMS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="submissions.css">
+</head>
+<body>
+
+<!-- Common Header -->
+<header class="topbar">
+
+    <div class="top-logo">
+        <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+             alt="Innomatics Logo">
+    </div>
+
+    <div class="top-search">
+        <span>⌕</span>
+        <input type="search" placeholder="Search">
+        <small>CTRL</small>
+        <small>K</small>
+    </div>
+
+    <div class="mentor-profile">
+        <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+             alt="Mentor Profile">
+
+        <div>
+            <strong>FSD Mentor</strong>
+            <small>TUTOR</small>
+        </div>
+
+        <span>⌄</span>
+    </div>
+
+</header>
+
+<!-- Common Sidebar -->
+<aside class="sidebar">
+
+    <nav>
+        <a href="dashboard.html">
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+        </a>
+
+        <a href="products.html">
+            <span class="nav-icon">◇</span>
+            <span>Products</span>
+        </a>
+
+        <div class="menu-group">
+            <a href="learning.html" class="active">
+                <span class="nav-icon">▣</span>
+                <span>Learning</span>
+            </a>
+
+            <div class="submenu">
+                <a href="learning.html">Batches</a>
+                <a href="feedback.html">Feedback Forms</a>
+                <a href="submissions.html" class="selected">Submissions</a>
+                <a href="recordings.html">Session Recordings</a>
+            </div>
+        </div>
+
+        <a href="engage.html">
+            <span class="nav-icon">∞</span>
+            <span>Engage</span>
+        </a>
+
+        <a href="settings.html">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+        </a>
+    </nav>
+
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+    <h3 class="page-title">Submissions</h3>
+
+    <section class="filter-bar">
+
+        <span>☰ Filters:</span>
+
+        <select id="dateFilter">
+            <option>Last 30 days</option>
+            <option>Last 7 days</option>
+            <option>Today</option>
+            <option>All Time</option>
+        </select>
+
+        <select id="courseFilter">
+            <option value="">Select Course</option>
+        </select>
+
+        <select id="batchFilter">
+            <option value="">Select Batch</option>
+        </select>
+
+        <select id="instructorFilter">
+            <option value="">Select Instructor</option>
+        </select>
+
+        <select id="assessmentFilter">
+            <option value="">Select Assessment</option>
+        </select>
+
+        <button type="button">More Filters</button>
+        <button type="button" class="clear-btn">Clear All Filters</button>
+        <button type="button" class="apply-btn">Apply</button>
+
+    </section>
+
+    <section class="submission-container">
+
+        <div class="submission-toolbar">
+
+            <div class="tabs">
+                <button class="tab active">Not Evaluated</button>
+                <button class="tab">Evaluated</button>
+                <button class="tab">All</button>
+            </div>
+
+            <div class="table-tools">
+                <span>View Total Count</span>
+
+                <input type="search"
+                       placeholder="Search learners by name or..."
+                       id="learnerSearch">
+            </div>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Learner Name</th>
+                        <th>Assessment Name</th>
+                        <th>Submission Date</th>
+                        <th>Timeliness</th>
+                        <th>Assessment Type</th>
+                        <th>Marks Obtained</th>
+                        <th>Total Marks</th>
+                        <th>Percentage</th>
+                        <th>Product Name</th>
+                        <th>Batch Name</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+
+                <tbody id="submissionTableBody">
+                    <tr>
+                        <td colspan="11" class="empty-data">
+                            No submissions available
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="submissions.js"></script>
+
+</body>
+</html>

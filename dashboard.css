@@ -1,0 +1,553 @@
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f4f9;
+    color: #202124;
+}
+
+/* TOP NAVIGATION */
+
+.topbar {
+    height: 64px;
+    width: 100%;
+    background-color: #142440;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.brand img {
+    width: 48px;
+    height: 43px;
+    object-fit: contain;
+    background: white;
+}
+
+.search-box {
+    width: 410px;
+    height: 40px;
+    background-color: #293a58;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+    gap: 9px;
+    position: absolute;
+    left: 30%;
+}
+
+.search-box span {
+    color: #b9c5d8;
+    font-size: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #aab7ca;
+}
+
+.shortcut {
+    border: 1px solid #8795aa;
+    border-radius: 5px;
+    padding: 3px 6px;
+    font-size: 10px !important;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.message-icon {
+    font-size: 22px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile img {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background: white;
+    object-fit: contain;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.profile-info strong {
+    font-size: 13px;
+}
+
+.profile-info small {
+    color: #b5c2d4;
+    font-size: 10px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 80px;
+    height: calc(100vh - 64px);
+    background-color: #142440;
+    position: fixed;
+    top: 64px;
+    left: 0;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #b6c2d5;
+}
+
+.nav-item span {
+    font-size: 22px;
+}
+
+.nav-item small {
+    font-size: 12px;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    margin-left: 80px;
+    padding-top: 64px;
+    min-height: 100vh;
+}
+
+.welcome-section {
+    height: 64px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    gap: 12px;
+    border-bottom: 1px solid #dce2ea;
+}
+
+.welcome-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #e8efff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.welcome-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dashboard-content {
+    padding: 25px;
+    min-height: calc(100vh - 128px);
+}
+
+/* SESSIONS TOOLBAR */
+
+.sessions-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sessions-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sessions-heading h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555b63;
+}
+
+.session-count {
+    background-color: #e9edf2;
+    padding: 5px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #333;
+}
+
+.date-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.date-arrow,
+.refresh-btn,
+.calendar-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #333;
+    font-size: 17px;
+}
+
+.date-arrow {
+    color: #888;
+}
+
+#sessionDate {
+    height: 38px;
+    width: 155px;
+    padding: 0 10px;
+    border: 1px solid #d8dce2;
+    border-radius: 7px;
+    background-color: white;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+}
+
+.refresh-btn {
+    margin-left: 10px;
+}
+
+.calendar-btn {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* HIDDEN CALENDAR PICKER */
+
+.hidden-date-picker {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* SESSION TABLE */
+
+.session-table-container {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 13px;
+    overflow-x: auto;
+}
+
+.session-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.session-table thead {
+    background-color: #edf1f5;
+}
+
+.session-table th {
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #242424;
+}
+
+.session-table th:first-child {
+    width: 4%;
+    border-radius: 7px 0 0 7px;
+}
+
+.session-table th:nth-child(2) {
+    width: 34%;
+}
+
+.session-table th:nth-child(3) {
+    width: 14%;
+}
+
+.session-table th:nth-child(4) {
+    width: 13%;
+}
+
+.session-table th:nth-child(5) {
+    width: 18%;
+}
+
+.session-table th:last-child {
+    width: 17%;
+    border-radius: 0 7px 7px 0;
+}
+
+.session-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #edf0f3;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.serial {
+    color: #8495aa;
+}
+
+.session-details strong {
+    font-size: 14px;
+    color: #444;
+}
+
+.session-labels {
+    display: flex;
+    gap: 8px;
+    margin: 7px 0;
+    align-items: center;
+}
+
+.recurring {
+    color: #2865f5;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.live-label {
+    background-color: #2865f5;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.session-details p {
+    color: #555;
+    margin: 7px 0;
+}
+
+.session-details small {
+    color: #929292;
+    font-size: 11px;
+}
+
+.attendance {
+    color: #1764f5;
+}
+
+.attendance span {
+    font-size: 13px;
+}
+
+.attendance small {
+    display: block;
+    margin-top: 5px;
+}
+
+.status {
+    padding: 7px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.completed {
+    background-color: #e2f5e9;
+    color: #279653;
+}
+
+.not-signed {
+    background-color: #eeeeee;
+    color: #929292;
+}
+
+.topics {
+    color: #777;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.sign-in-btn {
+    background-color: white;
+    color: #2865f5;
+    border: 1px solid #dce4f0;
+    border-radius: 5px;
+    padding: 9px 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.more-btn {
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 7px 9px;
+    color: #777;
+    cursor: pointer;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 55px !important;
+    color: #888;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .search-box {
+        width: 35%;
+        left: 25%;
+    }
+
+    .profile-info {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-box {
+        width: 35%;
+        left: 25%;
+    }
+
+    .sidebar {
+        width: 65px;
+    }
+
+    .main-content {
+        margin-left: 65px;
+    }
+}
+/* Learning submenu */
+.sidebar,
+.sidebar nav {
+    overflow: visible !important;
+}
+
+.sidebar {
+    z-index: 1000;
+}
+
+.menu-group {
+    position: relative;
+    width: 100%;
+}
+
+.menu-group .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 185px;
+    background: #1b2d49;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 2000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.menu-group:hover .submenu {
+    display: block;
+}
+
+.menu-group .submenu a {
+    display: block;
+    padding: 13px 18px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.menu-group .submenu a:hover {
+    background: #304563;
+    color: white;
+}
+.sidebar nav > a {
+    text-decoration: none;
+    color: #b9c5d9;
+}
+
+.sidebar nav > a:visited {
+    color: #b9c5d9;
+    text-decoration: none;
+}
+
+.sidebar nav > a:hover {
+    color: white;
+    text-decoration: none;
+}
+.sidebar nav > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 65px;
+    color: #b9c5d9;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.sidebar nav > a .nav-icon {
+    font-size: 21px;
+}
+
+.sidebar nav > a:hover {
+    color: white;
+    text-decoration: none;
+}

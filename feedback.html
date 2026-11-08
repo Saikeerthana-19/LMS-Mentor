@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Forms | Mentor LMS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <header class="topbar">
+
+        <div class="top-logo">
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Innomatics Logo">
+        </div>
+
+        <div class="top-search">
+            <span>⌕</span>
+            <input type="text" placeholder="Search">
+            <small>CTRL K</small>
+        </div>
+
+        <div class="mentor-profile">
+            <span>♧</span>
+
+            <div>
+                <strong>FSD Mentor</strong>
+                <small>TUTOR</small>
+            </div>
+
+            <span>⌄</span>
+        </div>
+
+    </header>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <nav>
+
+            <a href="dashboard.html">⌂ <span>Home</span></a>
+
+            <a href="products.html">♧ <span>Products</span></a>
+
+            <div class="menu-group">
+
+                <a href="learning.html" class="active">
+                    ▣ <span>Learning</span>
+                </a>
+
+                <div class="submenu">
+
+                    <a href="learning.html">Batches</a>
+
+                    <a href="feedback.html" class="selected">
+                        Feedback Forms
+                    </a>
+
+                    <a href="submissions.html">Submissions</a>
+
+                    <a href="recordings.html">Session Recordings</a>
+
+                </div>
+
+            </div>
+
+            <div class="menu-group">
+
+                <a href="engage.html">
+                    ∞ <span>Engage</span>
+                </a>
+
+                <div class="submenu">
+
+                    <a href="engage.html">Community</a>
+
+                    <a href="discussions.html">Discussions</a>
+
+                </div>
+
+            </div>
+
+            <a href="settings.html">⚙ <span>Settings</span></a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <h3>Custom Feedback Forms</h3>
+
+            <button id="createFormBtn">
+                + Create New Form
+            </button>
+
+        </div>
+
+
+        <!-- Feedback Forms Table -->
+        <section class="form-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Form Name</th>
+                        <th>Created On</th>
+                        <th>Type</th>
+                        <th>Conversions</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="feedbackTableBody">
+
+                    <tr>
+                        <td colspan="6" class="empty-data">
+                            No data
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- Default Form Notice -->
+        <div class="default-notice" id="defaultNotice">
+
+            <strong>⚠ Default Form Not Set</strong>
+
+            <p>
+                Setting a default form will help you avoid selecting the
+                feedback form every time you schedule a session.
+                Click on Actions to set a form as default.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="feedback.js"></script>
+
+</body>
+</html>

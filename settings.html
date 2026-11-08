@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Mentor LMS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="topbar">
+        <div class="top-logo">
+    <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+         alt="Innomatics Logo">
+</div>
+
+        <div class="top-search">
+            <span>⌕</span>
+            <input type="text" placeholder="Search">
+            <small>CTRL K</small>
+        </div>
+
+        <div class="mentor-profile">
+            <span>♧</span>
+            <div>
+                <strong id="topMentorName">FSD Mentor</strong>
+                <small>TUTOR</small>
+            </div>
+            <span>⌄</span>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <a href="dashboard.html">⌂ <span>Home</span></a>
+            <a href="products.html">♧ <span>Products</span></a>
+
+            <div class="menu-group">
+                <a href="learning.html">▣ <span>Learning</span></a>
+                <div class="submenu">
+                    <a href="learning.html">Batches</a>
+                    <a href="feedback.html">Feedback Forms</a>
+                    <a href="submissions.html">Submissions</a>
+                    <a href="recordings.html">Session Recordings</a>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <a href="engage.html">∞ <span>Engage</span></a>
+                <div class="submenu">
+                    <a href="engage.html">Community</a>
+                    <a href="discussions.html">Discussions</a>
+                </div>
+            </div>
+
+            <a href="settings.html" class="active">⚙ <span>Settings</span></a>
+        </nav>
+    </aside>
+
+    <!-- Main Settings -->
+    <main class="settings-main">
+
+        <!-- Settings Header -->
+        <div class="settings-header">
+            <div class="breadcrumb">
+                <span class="back-icon">←</span>
+                <strong>Settings</strong>
+                <span class="arrow">›</span>
+                <span>My Profile</span>
+            </div>
+
+            <div class="settings-actions">
+                <button class="password-btn">♙ &nbsp; Change password</button>
+                <button class="edit-btn">✎ &nbsp; Edit Profile</button>
+            </div>
+        </div>
+
+        <div class="settings-layout">
+
+            <!-- Left Settings Menu -->
+            <aside class="settings-menu">
+                <small>PROFILE & ORGANIZATION</small>
+                <a href="settings.html" class="selected">My Profile</a>
+            </aside>
+
+            <!-- Right Profile Content -->
+            <section class="profile-content">
+
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-logo">
+                        <img src="https://innomatics.in/wp-content/uploads/2023/01/innomatics-logo.png"
+                             alt="Innomatics">
+                    </div>
+
+                    <div>
+                        <h3 id="profileName">Loading...</h3>
+                        <p>Instructor</p>
+                    </div>
+                </div>
+
+                <!-- Personal Details -->
+                <div class="detail-card">
+                    <h3>Personal Details</h3>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label>Name</label>
+                            <p id="mentorName">Loading...</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Username</label>
+                            <p id="username">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Date of Birth</label>
+                            <p id="dateOfBirth">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Gender</label>
+                            <p id="gender">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="detail-card">
+                    <h3>Contact Details</h3>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label>Mobile</label>
+                            <p id="phone">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Alternate Mobile</label>
+                            <p id="alternateMobile">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Email</label>
+                            <p id="email">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="detail-card">
+                    <h3>Address</h3>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label>Permanent Address</label>
+                            <p id="permanentAddress">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>State</label>
+                            <p id="state">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>City</label>
+                            <p id="city">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Pincode</label>
+                            <p id="pincode">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Residential Address</label>
+                            <p id="residentialAddress">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Details -->
+                <div class="detail-card other-card">
+                    <h3>Other</h3>
+
+                    <div class="other-details">
+                        <div class="detail-item">
+                            <label>About</label>
+                            <p id="about">-</p>
+                        </div>
+
+                        <div class="detail-item">
+                            <label>Timezone</label>
+                            <p id="timezone">-</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="settings.js"></script>
+
+</body>
+</html>

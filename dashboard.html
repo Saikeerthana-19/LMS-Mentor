@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor LMS - Home</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+        <div class="brand">
+            <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                 alt="Innomatics Logo">
+        </div>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="text" placeholder="Search">
+            <span class="shortcut">CTRL</span>
+            <span class="shortcut">K</span>
+        </div>
+
+        <div class="top-actions">
+            <span class="message-icon">▤</span>
+
+            <div class="profile">
+                <img src="https://innomaticsresearchlabs.com/wp-content/uploads/2020/08/cropped-Innomatics-Research-Labs-Logo-Fevicon-Icon.png"
+                     alt="Mentor Profile">
+
+                <div class="profile-info">
+                    <strong>FSD Mentor</strong>
+                    <small>TUTOR</small>
+                </div>
+
+                <span>⌄</span>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <nav>
+
+            <a href="dashboard.html" class="nav-item active">
+                <span>⌂</span>
+                <small>Home</small>
+            </a>
+
+            <a href="dashboard.html">
+    <span class="nav-icon">◇</span>
+    <span>Products</span>
+</a>
+
+            <!-- LEARNING MENU -->
+            <div class="menu-group">
+
+                <a href="learning.html" class="nav-item">
+                    <span>▣</span>
+                    <small>Learning</small>
+                </a>
+
+                <div class="submenu">
+                    <a href="learning.html">Batches</a>
+                    <a href="feedback.html">Feedback Forms</a>
+                    <a href="submissions.html">Submissions</a>
+                    <a href="recordings.html">Session Recordings</a>
+                </div>
+
+            </div>
+
+            <a href="engage.html" class="nav-item">
+                <span>∞</span>
+                <small>Engage</small>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span>⚙</span>
+                <small>Settings</small>
+            </a>
+
+        </nav>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <section class="welcome-section">
+            <div class="welcome-icon">👋</div>
+            <h2>Welcome FSD!</h2>
+        </section>
+
+        <section class="dashboard-content">
+
+            <!-- SESSIONS TOOLBAR -->
+            <div class="sessions-toolbar">
+
+                <div class="sessions-heading">
+                    <h3>Today's Sessions</h3>
+                    <span class="session-count">2</span>
+                </div>
+
+                <!-- DATE CONTROLS -->
+                <div class="date-controls">
+
+                    <button class="date-arrow" id="previousDate" type="button">
+                        &#10094;
+                    </button>
+
+                    <input type="text"
+                           id="sessionDate"
+                           value="07-11-2026"
+                           readonly>
+
+                    <button class="date-arrow" id="nextDate" type="button">
+                        &#10095;
+                    </button>
+
+                    <button class="refresh-btn" id="refreshSessions" type="button">
+                        &#10227;
+                    </button>
+
+                    <button class="calendar-btn" id="viewCalendar" type="button">
+                        &#128197; View Calendar
+                    </button>
+
+                    <input type="date"
+                           id="calendarPicker"
+                           class="hidden-date-picker"
+                           value="2026-11-07">
+
+                </div>
+
+            </div>
+
+
+            <!-- SESSION TABLE -->
+            <div class="session-table-container">
+
+                <table class="session-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Sessions</th>
+                            <th>Attendance ⓘ</th>
+                            <th>Status</th>
+                            <th>Topics</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="sessionTableBody">
+
+                        <tr>
+                            <td class="serial">01</td>
+
+                            <td class="session-details">
+                                <strong>10:00AM to 11:00AM</strong>
+
+                                <div class="session-labels">
+                                    <span class="recurring">↻ RECURRING</span>
+                                    <span class="live-label">LIVE MEETING</span>
+                                </div>
+
+                                <p>FSD Morning Batch | Full Stack Development</p>
+
+                                <small>
+                                    Vasu Kumar (FSD Morning Batch | Full Stack Development)
+                                </small>
+                            </td>
+
+                            <td class="attendance">
+                                <span>♧ 4/5</span>
+                                <small>80.00%</small>
+                            </td>
+
+                            <td>
+                                <span class="status completed">SIGNED IN</span>
+                            </td>
+
+                            <td class="topics">HTML Introduction</td>
+
+                            <td class="actions">
+                                <button class="sign-in-btn" type="button">
+                                    Sign In →
+                                </button>
+
+                                <button class="more-btn" type="button">
+                                    •••
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="serial">02</td>
+
+                            <td class="session-details">
+                                <strong>10:00AM to 11:00AM</strong>
+
+                                <div class="session-labels">
+                                    <span class="live-label">LIVE MEETING</span>
+                                </div>
+
+                                <p>FSD Morning Batch | Full Stack Development</p>
+
+                                <small>
+                                    Vasu Kumar (FSD Morning Batch | Full Stack Development)
+                                </small>
+                            </td>
+
+                            <td class="attendance">
+                                <span>♧ 0/5</span>
+                            </td>
+
+                            <td>
+                                <span class="status not-signed">NOT SIGNED IN</span>
+                            </td>
+
+                            <td class="topics">-</td>
+
+                            <td class="actions">
+                                <button class="sign-in-btn" type="button">
+                                    Sign In →
+                                </button>
+
+                                <button class="more-btn" type="button">
+                                    •••
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
